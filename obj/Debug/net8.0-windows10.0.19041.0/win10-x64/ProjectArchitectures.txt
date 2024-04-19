@@ -1,0 +1,1 @@
+C:\Users\samue\source\repos\MusicLibraryManager\MusicLibraryManager.csproj;x64

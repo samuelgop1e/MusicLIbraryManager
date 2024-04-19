@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MusicLibraryManager.MainPage">
+
+    <FlexLayout Direction="Column">
+        <VerticalStackLayout Padding="10" FlexLayout.Basis="400">
+            <Entry x:Name="nameEntryField" Placeholder="Song Name"/>
+            <Entry x:Name="artistEntryField" Placeholder="Artist Name"/>
+            <Entry x:Name="albumEntryField" Placeholder="Album Name"/>
+            <Entry x:Name="durationEntryField" Placeholder="Duration In Seconds"/>
+            <Button x:Name="saveButton" Text="Save" Clicked="saveButton_Clicked"/>
+        </VerticalStackLayout>
+        <ListView x:Name="listView" FlexLayout.Grow="1" HasUnevenRows="True" ItemTapped="listView_ItemTapped">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <VerticalStackLayout Padding="5">
+                            <Label Text="{Binding Name}" FontSize="17" FontAttributes="Bold"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100"/>
+                                    <ColumnDefinition Width="*"/>
+                                    <ColumnDefinition Width="100"/>
+                                </Grid.ColumnDefinitions>
+                                <Label Grid.Column="0" Text="{Binding Artist}" FontAttributes="Italic"/>
+                                <Label Grid.Column="1" Text="{Binding Album}" FontAttributes="Bold"/>
+                                <Label Grid.Column="2" Text="{Binding Time}"/>
+                            </Grid>
+                        </VerticalStackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+
+        </ListView>
+
+    </FlexLayout>
+
+</ContentPage>
